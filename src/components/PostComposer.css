@@ -1,0 +1,135 @@
+.post-composer {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  animation: fadeIn 0.7s ease;
+}
+
+.composer-header {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+}
+
+.composer-header .avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #2575fc;
+  transition: transform 0.3s ease;
+}
+.composer-header .avatar:hover {
+  transform: scale(1.1);
+}
+
+.composer-header textarea {
+  flex: 1;
+  resize: none;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 0.6rem;
+  border-radius: 12px;
+  background: #f0f2f5;
+  min-height: 70px;
+  transition: all 0.3s ease;
+}
+.composer-header textarea:focus {
+  background: #fff;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.3);
+}
+
+/* Image Preview */
+.preview {
+  position: relative;
+  display: inline-block;
+  animation: fadeIn 0.5s ease;
+}
+.preview img {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-top: 0.5rem;
+}
+.preview button {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+/* Actions */
+.composer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.composer-actions button {
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.composer-actions button[type="button"] {
+  background: #f0f2f5;
+  color: #333;
+}
+.composer-actions button[type="button"]:hover {
+  background: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.composer-actions .post-btn {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+}
+.composer-actions .post-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(37,117,252,0.5);
+}
+
+.char-count {
+  font-size: 0.8rem;
+  color: #666;
+  margin-right: auto;
+  margin-left: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .composer-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .composer-header .avatar {
+    align-self: center;
+  }
+  .composer-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .char-count {
+    margin: 0;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

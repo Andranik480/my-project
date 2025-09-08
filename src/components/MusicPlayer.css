@@ -1,0 +1,62 @@
+.music-player {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.music-player h2 {
+  color: #2575fc;
+  margin-bottom: 1rem;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 1rem;
+  transition: 0.3s;
+}
+
+.search-bar:focus {
+  border-color: #6a11cb;
+  box-shadow: 0 0 10px rgba(37,117,252,0.3);
+}
+
+.song-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.song-list li {
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  transition: all 0.3s ease;
+}
+
+.song-list li:hover {
+  background: rgba(37,117,252,0.1);
+  transform: scale(1.03);
+}
+
+.song-list li.active {
+  background: #2575fc;
+  color: #fff;
+}
+
+.player-controls {
+  margin-top: 20px;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform: translateY(20px);}
+  to {opacity:1; transform: translateY(0);}
+}

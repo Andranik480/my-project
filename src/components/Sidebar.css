@@ -1,0 +1,236 @@
+/* Sidebar Container */
+.sidebar {
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.8s ease;
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.sidebar-scroll {
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}
+
+
+
+.user-info {
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: slideDown 0.6s ease;
+}
+.user-info img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+.user-info img:hover {
+  transform: scale(1.1);
+}
+.user-info h2 {
+  margin: 0.3rem 0;
+  font-size: 1.4rem;
+}
+.user-info .status {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.search-bar {
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  margin-bottom: 1rem;
+  width: 100%;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+.search-bar:focus {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.sidebar h3 {
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  padding-bottom: 0.3rem;
+}
+
+/* Friends List */
+.friends-list,
+.users-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.friends-list li,
+.users-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  animation: slideUp 0.5s ease;
+}
+.friends-list li:hover,
+.users-list li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateX(5px);
+}
+
+.friends-list img,
+.users-list img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.friends-list span,
+.users-list span {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.friends-list .last-msg {
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+.active-friend {
+  background: rgba(255, 255, 255, 0.3) !important;
+  transform: scale(1.02);
+}
+
+.users-list button {
+  margin-left: auto;
+  background: #fff;
+  color: #2575fc;
+  border: none;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.users-list button:hover {
+  background: #6a11cb;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* Chat Box */
+.chat-box {
+  background: #fff;
+  color: #333;
+  border-radius: 15px;
+  padding: 1rem;
+  margin-top: auto;
+  animation: slideIn 0.6s ease;
+}
+.chat-box h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+.messages {
+  max-height: 180px;
+  overflow-y: auto;
+  margin-bottom: 0.6rem;
+  padding-right: 0.3rem;
+}
+.msg {
+  margin: 0.3rem 0;
+  padding: 0.5rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+.msg.me {
+  background: #2575fc;
+  color: #fff;
+  align-self: flex-end;
+}
+.msg.friend {
+  background: #eaeaea;
+  color: #333;
+  align-self: flex-start;
+}
+.chat-input {
+  display: flex;
+  gap: 0.5rem;
+}
+.chat-input input {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+.chat-input input:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 6px rgba(37, 117, 252, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+  }
+  .chat-box {
+    margin-top: 1rem;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideIn {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes slideUp {
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+@keyframes slideDown {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

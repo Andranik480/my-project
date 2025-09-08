@@ -1,0 +1,26 @@
+[
+	{
+		"id": 1,
+		"username": "JohnDoe",
+		"email": "john@example.com",
+		"phone": "123456789",
+		"age": 25,
+		"friends": [2, 3]
+	},
+	{
+		"id": 2,
+		"username": "Alice",
+		"email": "alice@example.com",
+		"phone": "987654321",
+		"age": 22,
+		"friends": [1]
+	},
+	{
+		"id": 3,
+		"username": "Bob",
+		"email": "bob@example.com",
+		"phone": "456123789",
+		"age": 30,
+		"friends": [1]
+	}
+]

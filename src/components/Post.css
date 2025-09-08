@@ -1,0 +1,31 @@
+.post-card {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 1rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  animation: fadeIn 1s ease forwards;
+}
+
+.post-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.post-footer {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+}
+
+.post-footer span.liked {
+  color: #2575fc;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
