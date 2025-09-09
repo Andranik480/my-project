@@ -4,8 +4,8 @@
   gap: 1.5rem;
   padding: 1rem;
   width: 100%;
-  max-width: 1050px; /* Մաքս. լայնություն */
-  margin: 0 auto; /* Կենտրոնում պահել մեծ էկրանների համար */
+  max-width: 1050px; 
+  margin: 0 auto; 
   box-sizing: border-box;
 }
 
@@ -85,7 +85,7 @@
 /* Responsive */
 @media (max-width: 1200px) {
   .feed {
-    max-width: 90%; /* Էկրանի լայնության 90%-ը */
+    max-width: 90%;
   }
 }
 
@@ -105,7 +105,7 @@
 
 @media (max-width: 768px) {
   .feed {
-    max-width: 100%; /* Սմարթֆոնների համար ամբողջ էկրան */
+    max-width: 100%; 
     padding: 0.5rem;
   }
 }
