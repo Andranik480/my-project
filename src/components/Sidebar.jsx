@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Sidebar.css";
-import MusicPlayer from "./MusicPlayer";
+// import MusicPlayer from "./MusicPlayer";
 
 const Sidebar = ({ user, selectedTab, setSelectedTab }) => {
   const usersData = JSON.parse(localStorage.getItem("usersData")) || [];
