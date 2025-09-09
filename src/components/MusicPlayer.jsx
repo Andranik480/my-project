@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import "./MusicPlayer.css";
 
 const songsData = [
-  { id: 1, title: "Macan", url:"/music/song1.mp3" },
+  { id: 1, title: "Macan", url: "/music/song1.mp3" },
   { id: 2, title: "Macan", url: "/music/song2.mp3" },
   { id: 3, title: "JANAGA - Душа", url: "/music/song3.mp3" },
 ];
@@ -13,17 +13,25 @@ const MusicPlayer = () => {
   const [currentSong, setCurrentSong] = useState(null);
   const audioRef = useRef(null);
 
-  const filteredSongs = songs.filter(
-    (song) =>
-      song.title.toLowerCase().includes(search.toLowerCase()) ||
-      song.artist.toLowerCase().includes(search.toLowerCase())
+  const filteredSongs = songs.filter((song) =>
+    song.title.toLowerCase().includes(search.toLowerCase())
   );
 
   const playSong = (song) => {
     setCurrentSong(song);
+
     setTimeout(() => {
       if (audioRef.current) {
-        audioRef.current.play();
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              console.log("Playback started");
+            })
+            .catch((err) => {
+              console.log("Playback failed:", err);
+            });
+        }
       }
     }, 100);
   };
@@ -31,6 +39,7 @@ const MusicPlayer = () => {
   return (
     <div className="music-player">
       <h2>🎵 My Music</h2>
+
       <input
         type="text"
         placeholder="Search music..."
@@ -55,8 +64,9 @@ const MusicPlayer = () => {
         <div className="player-controls">
           <h3>▶️ {currentSong.title}</h3>
           <audio
+            key={currentSong.id} 
             ref={audioRef}
-            src={currentSong.url}
+            src={process.env.PUBLIC_URL + currentSong.url}
             controls
             autoPlay
           >
