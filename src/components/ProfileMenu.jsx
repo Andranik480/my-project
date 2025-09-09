@@ -1,10 +1,11 @@
 import React from "react";
 import "./ProfileMenu.css";
+import { Link } from "react-router-dom";
 
 const ProfileMenu = ({ selectedTab, setSelectedTab }) => {
   return (
     <nav className="profile-menu">
-      <h2><a href="/home">FriendSphere</a></h2>
+      <h2><Link to="/home">FriendSphere</Link></h2>
       <ul>
         <li
           className={selectedTab === "posts" ? "active" : ""}
